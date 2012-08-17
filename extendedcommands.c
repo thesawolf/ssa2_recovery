@@ -444,7 +444,7 @@ struct lun_node {
 static struct lun_node *lun_head = NULL;
 static struct lun_node *lun_tail = NULL;
 
-in control_usb_storage_set_lun(Volume* vol, bool enable, const char *lun_file) {
+int control_usb_storage_set_lun(Volume* vol, bool enable, const char *lun_file) {
     char c = 0;
     const char *vol_device = enable ? vol->device : &c;
     int fd;
